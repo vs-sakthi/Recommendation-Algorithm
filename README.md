@@ -2,11 +2,17 @@
 
 One common way of increasing exposure to the long tail of products is by simply jittering the results at random. But injecting randomness has two issues: first, you need an awful lot of it to get products deep in the catalog to bubble up, and second, it breaks the framing of the recommendations and makes them less credible in the eyes of your customers.
 
+Implementing a Trending Products Engine
+
+First, let's get our add-to-cart data. From our database, this is relatively simple; we track the creation time of every cart-product (we call it a 'shipment item') so we can just extract this using SQL. I've taken the last 20 days of cart data so we can see some trends (though really only a few days of data is needed to determine what's trending):
+
+Each row represents the number of cart adds for a particular product on a particular day in the past 20 days. I use 'age' as -20 (20 days ago) to -1 (yesterday) so that, when visualizing the data, it reads left-to-right, past-to-present, intuitively.
+
+Here's sample data(In the repo) for 100 random products from our database. I'm anonymized both the product IDs and the cart-adds in such a way that, when standardized, the results are completely real, but the individual data points don't represent our actual business.
+
 Basic Approach
 
 Before we dive into the code, let's outline the basic approach by visualizing the data. All the code for each intermediate step, and the visualizations, is included and explained later.
-
-Here's the add-to-carts for product 542, from the sample dataset:
 
 basic-trend
 

@@ -1,4 +1,4 @@
-# Recommendation-Algorithm
+# Products Recommendation Engine in Python
 
 One common way of increasing exposure to the long tail of products is by simply jittering the results at random. But injecting randomness has two issues: first, you need an awful lot of it to get products deep in the catalog to bubble up, and second, it breaks the framing of the recommendations and makes them less credible in the eyes of your customers.
 
